@@ -54,7 +54,7 @@ namespace IssueDb.Querying
             {
                 switch (and)
                 {
-                    case BoundKevValueQuery kevValueExpression:
+                    case BoundKeyValueQuery kevValueExpression:
                         Apply(result, kevValueExpression);
                         break;
                     case BoundTextQuery textExpression:
@@ -68,7 +68,7 @@ namespace IssueDb.Querying
             return result;
         }
 
-        private static void Apply(IssueFilter result, BoundKevValueQuery expression)
+        private static void Apply(IssueFilter result, BoundKeyValueQuery expression)
         {
             var key = expression.Key.ToLowerInvariant();
             var value = expression.Value.ToLowerInvariant();
